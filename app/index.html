@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Array Joiner</title>
+  <script src="app.js"></script>
+  <script src="appWithRecursion.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+  <div>
+    Press for non-recursive result: <button id="concatButton">Fire!</button>
+    <pre id="output"></pre>
+  </div>
+  <div>
+    Enter comma separated list for the 2 arrays <br />
+    Array 1: <input type="text" id="recursiveArraya" value="1,2,3" />
+    Array 2: <input type="text" id="recursiveArrayb" value="a,b,c" />
+    Press for recursive result: <button id="joinButton">Fire!</button>
+    <pre id="recursive"></pre>
+  </div>
+  <script type="text/javascript" language="JavaScript">
+    var app = new App(), appWithRecursion = new AppWithRecursion();
+
+    var a = [1,2,3], b = ['a', 'b', 'c'];
+
+    $('#concatButton').click(function(){
+      var result = app.concatArrays(a, b);
+      $('#output').html(JSON.stringify(result, null, ' '));
+    });
+
+    $('#joinButton').click(function(){
+
+      var valueA = $('#recursiveArraya').val(),
+          valueB = $('#recursiveArrayb').val(),
+          arrayA, arrayB;
+      if(valueA){
+        arrayA = valueA.split(',');
+      }
+      if(valueB){
+        arrayB = valueB.split(',');
+      }
+      var recursiveResult = appWithRecursion.joinArrays(arrayA, arrayB);
+      $('#recursive').html(JSON.stringify(recursiveResult, null, ' '));
+    });
+
+  </script>
+</body>
+</html>
