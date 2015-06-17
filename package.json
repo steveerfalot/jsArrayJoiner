@@ -1,5 +1,5 @@
 {
-  "name": "jsPractice",
+  "name": "jsArrayJoiner",
   "version": "0.0.0",
   "description": "",
   "main": "package.json",
@@ -15,6 +15,5 @@
     "load-grunt-tasks": "~3.2.0",
     "karma-coverage": "~0.4.2"
   },
-  "author": "",
-  "license": "BSD-2-Clause"
+  "author": "Mike Parks"
 }
